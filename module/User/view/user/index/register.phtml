@@ -1,0 +1,55 @@
+
+<div class="register-logo">
+    <a href="../../index2.html"><b>Admin</b>LTE</a>
+</div>
+
+<div class="register-box-body">
+    <p class="login-box-msg">Register a new membership</p>
+
+    <?php
+        echo $this->flashMessanger()->render('error', ['alert alert-danger alert-dismissible']);
+        echo $this->flashMessanger()->render('success', ['alert alert-success alert-dismissible']);
+    ?>
+
+    <?php echo $this->form()->openTag($this->form); ?>
+    <div class="form-group <?php echo $this->formElementErrors($this->form->get('name')) ? 'has-error' : ''; ?> has-feedback">
+        <?php echo $this->formText($this->form->get('name')); ?>
+        <span class="glyphilcon glyphilcon-user form-control-feedback"></span>
+        <?php echo $this->formElementErrors($this->form->get('name')); ?>
+    </div>
+    <div class="form-group <?php echo $this->formElementErrors($this->form->get('email')) ? 'has-error' : ''; ?> has-feedback">
+        <?php echo $this->formEmail($this->form->get('email')); ?>
+        <span class="glyphilcon glyphilcon-user form-control-feedback"></span>
+        <?php echo $this->formElementErrors($this->form->get('email')); ?>
+    </div>
+    <div class="form-group <?php echo $this->formElementErrors($this->form->get('password')) ? 'has-error' : ''; ?> has-feedback">
+        <?php echo $this->formPassword($this->form->get('password')); ?>
+        <span class="glyphilcon glyphilcon-user form-control-feedback"></span>
+        <?php echo $this->formElementErrors($this->form->get('password')); ?>
+    </div>
+    <div class="form-group <?php echo $this->formElementErrors($this->form->get('varifyPassword')) ? 'has-error' : ''; ?> has-feedback">
+        <?php echo $this->formPassword($this->form->get('varifyPassword')); ?>
+        <span class="glyphilcon glyphilcon-user form-control-feedback"></span>
+        <?php echo $this->formElementErrors($this->form->get('varifyPassword')); ?>
+    </div>
+    <?php echo $this->formHidden($this->form - get('csrf')); ?>
+    <div class="row">
+        <div class="pull-roght col-xs-4">
+            <button type="submit" class="btn btn-primary btn-block btn-flat">Registrar</button>            
+        </div>
+    </div>
+
+    <?php echo $this->form()->closeTag(); ?>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <a href="#" class="text-center">Eu já tenho cadastro</a>            
+        </div>
+        <div class="col-xs-6">           
+            <a href="<?= $this->url('user/default', ['controller' => 'Index', 'action' => 'recovered-password']); ?>" class="text-center">Esqueci a minha senha</a>
+        </div>
+
+    </div>
+
+</div>
+<!-- /.form-box -->
