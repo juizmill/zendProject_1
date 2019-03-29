@@ -2,7 +2,7 @@
 
 use Core\Factories\TransportSmtpFactory;
 use Zend\Form\View\Helper\FormElementErrors;
-use \Core\Factories\FormElementErrosFactory;
+use Core\Factories\FormElementErrosFactory;
 
 return [
     'service_manager' => [
@@ -39,4 +39,3 @@ return [
         ],
     ],
 ];
-?>
